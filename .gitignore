@@ -119,5 +119,3 @@ env/
 ### Configuration files ###
 .env
 
-### include md folder for readme images etc
-!md/
