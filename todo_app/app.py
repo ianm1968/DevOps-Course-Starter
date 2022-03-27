@@ -1,6 +1,6 @@
 from flask import Flask,render_template,request,redirect
 from todo_app.flask_config import Config
-from todo_app.data.session_items import get_items,add_item,get_item, save_item
+from todo_app.data.session_items import get_items,add_item,get_item,save_item,delete_item
 
 app = Flask(__name__)
 app.config.from_object(Config())
@@ -23,7 +23,7 @@ def add_item_by_title():
 @app.route('/complete', methods=['POST'])
 def complete_item_by_title():
     global to_do_list
-    item_to_complete = request.form.get('task_to_complete__by_title')
+    item_to_complete = request.form.get('task_to_complete_by_title')
     for item in to_do_list:
         print(item)
         if item['title'] == item_to_complete:
@@ -36,12 +36,10 @@ def complete_item_by_title():
 @app.route('/delete', methods=['POST'])
 def delete_item_by_title():
     global to_do_list
-    item_to_delete = request.form.get('task_to_delete__by_title')
+    item_to_delete = request.form.get('task_to_delete_by_title')
     for item in to_do_list:
-        print(item)
         if item['title'] == item_to_delete:
-            print(item['id'])
-            deleted_item(item)
+            delete_item(item)
             break
     return redirect('/')
 

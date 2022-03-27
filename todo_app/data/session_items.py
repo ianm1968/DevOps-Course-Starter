@@ -1,3 +1,4 @@
+from site import execsitecustomize
 from flask import session
 
 _DEFAULT_ITEMS = [
@@ -71,12 +72,14 @@ def save_item(item):
 def delete_item(item):
     """
     Delete an existing item in the session. If no existing item matches the ID of the specified item, nothing is deleted (I hope).
-
+poetry 
     Args:
         item: The item to delete.
     """
     existing_items = get_items()
-    updated_items = [item for item in existing_items if item['id'] != existing_item['id']]
-    session['items'] = updated_items
-
+    for i in range(len(existing_items)):
+        if existing_items[i]['id'] == item['id']:
+            del existing_items[i]
+            break
+    session['items'] = existing_items
     return item
