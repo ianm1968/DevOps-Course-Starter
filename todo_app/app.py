@@ -23,7 +23,7 @@ def add_item_by_title():
 @app.route('/complete', methods=['POST'])
 def complete_item_by_title():
     global to_do_list
-    item_to_complete = request.form.get('task_to_complete_by_title')
+    item_to_complete = request.form.get('task_title')
     for item in to_do_list:
         print(item)
         if item['title'] == item_to_complete:
@@ -36,7 +36,7 @@ def complete_item_by_title():
 @app.route('/delete', methods=['POST'])
 def delete_item_by_title():
     global to_do_list
-    item_to_delete = request.form.get('task_to_delete_by_title')
+    item_to_delete = request.form.get('task_title')
     for item in to_do_list:
         if item['title'] == item_to_delete:
             delete_item(item)
