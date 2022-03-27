@@ -18,26 +18,14 @@
       </ul>
     </div>
   </div>
-  
-  <form method="post" action="/add" >
+
+  <form me  <form method="post" >
     <label>Task:
       <input name="task_title" type="text" required>
     </label>
-    <button>Add</button>
+    <button formaction="/add" >Add</button>
+    <button formaction="/complete" >Complete</button>
+    <button formaction="/delete" >Delete</button>
   </form>
-  
-  <form me  <form method="post" action="/complete" >
-    <label>Task:
-      <input name="task_to_complete_by_title" type="text" required>
-    </label>
-    <button>Complete</button>
-  </form>
-  
-  <form method="post" action="/delete" >
-    <label>Task:
-      <input name="task_to_delete_by_title" type="text" required>
-    </label>
-    <button>Delete</button>
-  </form>
-  
+
 {% endblock %}
