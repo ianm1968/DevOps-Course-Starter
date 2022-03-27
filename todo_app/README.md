@@ -4,11 +4,11 @@
 
 This demonstration webapp uses Flask and poetry for development.  See below for details.  The application can be accessed on  a standard browser via HTTP port 5000. E.g. https://{server-ip-address-goes-here}:5000
 
-![To Do app screenshot](/md/to-do-app.png "To Do App")
+![To Do app screenshot](md/to-do-app.png "To Do App")
 
 The app allows the user to enter an item into a To Do list.
 
- - Enter the text in the eddit
+ - Enter the task text in the 'Task' edit
  - Click Add
 
 > If you are using GitPod for the project exercise (i.e. you cannot use your local machine) then you'll want to launch a VM using the [following link](https://gitpod.io/#https://github.com/CorndelWithSoftwire/DevOps-Course-Starter). Note this VM comes pre-setup with Python & Poetry pre-installed.
