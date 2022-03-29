@@ -25,9 +25,7 @@ def complete_item_by_title():
     global to_do_list
     item_to_complete = request.form.get('task_title')
     for item in to_do_list:
-        print(item)
         if item['title'] == item_to_complete:
-            print(item['id'])
             item['status'] = 'Completed'
             save_item(item)
             break
