@@ -1,4 +1,3 @@
-from site import execsitecustomize
 from flask import session
 
 _DEFAULT_ITEMS = [
