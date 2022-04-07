@@ -37,7 +37,7 @@ def delete_item_by_title():
     item_to_delete = request.form.get('task_title')
     for item in to_do_list:
         if item['title'] == item_to_delete:
-            delete_item(item)
+            delete_item(item['id'])
             break
     return redirect('/')
 
